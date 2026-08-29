@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mohamed Fayaz.S — Civil Engineering Portfolio</title>
+<meta name="description" content="Mohamed Fayaz.S — B.E. Civil Engineering student, building ideas with engineering and technology.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;1,500;1,600&display=swap');
+
+:root{
+  --navy:#050b18;
+  --navy2:#081226;
+  --plum:#24102d;
+  --plum2:#35143d;
+  --red:#ff2d1f;
+  --yellow:#f5e900;
+  --white:#f6f5ef;
+  --muted:#a2a8b4;
+  --line:rgba(246,245,239,.14);
+  --cyan:#8edcff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+.cursor-orb{position:fixed;width:170px;height:170px;border-radius:50%;pointer-events:none;z-index:1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(245,233,0,.09),transparent 68%)}
+body{margin:0;background:var(--navy);color:var(--white);font-family:Inter,Arial,sans-serif;overflow-x:hidden}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-3;
+  background:
+    radial-gradient(circle at 72% 8%,rgba(255,45,31,.13),transparent 22%),
+    radial-gradient(circle at 18% 55%,rgba(245,233,0,.07),transparent 22%),
+    radial-gradient(circle at 90% 70%,rgba(93,39,109,.25),transparent 28%);
+}
+body:after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.025;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+a{color:inherit}
+.wrap{width:min(1200px,90vw);margin:auto}
+.top{
+  height:74px;border-bottom:1px solid var(--line);display:flex;align-items:center;
+  justify-content:space-between;position:sticky;top:0;z-index:10;background:rgba(5,11,24,.84);
+  backdrop-filter:blur(18px)
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font:500 11px 'DM Mono';letter-spacing:.14em}
+.brand-mark{width:35px;height:35px;border:1px solid rgba(245,233,0,.5);display:grid;place-items:center;color:var(--yellow);background:#0b1120}
+.brand-muted{color:#6f7786}
+.nav{display:flex;gap:28px}
+.nav a,.top-link{font:10px 'DM Mono';letter-spacing:.13em;text-transform:uppercase;color:#9ba3af;text-decoration:none}
+.nav a:hover,.top-link:hover{color:var(--yellow)}
+.top-link{border:1px solid var(--line);padding:10px 13px}
+
+.hero{
+  min-height:calc(100vh - 74px);display:grid;grid-template-columns:1.05fr .95fr;
+  gap:55px;align-items:center;padding:72px 0 95px;position:relative
+}
+.hero-copy{position:relative;z-index:2}
+.kicker{font:10px 'DM Mono';letter-spacing:.16em;text-transform:uppercase;color:#87909d}
+.status{display:inline-flex;align-items:center;gap:9px;margin-bottom:24px}
+.status i{width:6px;height:6px;border-radius:50%;background:var(--yellow);box-shadow:0 0 14px var(--yellow)}
+h1{font-size:clamp(58px,8.6vw,110px);line-height:.86;letter-spacing:-.065em;margin:0 0 30px;font-weight:700}
+h1 em,h2 em,h3 em,blockquote em{font-family:'Playfair Display',serif;font-weight:500;color:var(--yellow)}
+.hero-desc{max-width:630px;color:var(--muted);line-height:1.85;font-size:15px}
+.hero-desc strong{color:var(--white)}
+.actions{display:flex;gap:10px;margin-top:32px;flex-wrap:wrap}
+.btn{padding:14px 17px;border:1px solid var(--line);text-decoration:none;font:10px 'DM Mono';letter-spacing:.1em;text-transform:uppercase;transition:.25s}
+.btn:hover{transform:translateY(-3px)}
+.btn-main{background:var(--yellow);border-color:var(--yellow);color:#080b13}
+.btn-alt{color:#d9dbe0;background:#ffffff05}
+.btn-alt:hover{border-color:var(--red);color:#fff}
+
+.hero-art{height:550px;position:relative;display:grid;place-items:center}
+.hero-art:before{
+  content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(245,233,0,.16);
+  border-radius:50%;box-shadow:0 0 120px rgba(255,45,31,.08) inset
+}
+.hero-art:after{
+  content:"";position:absolute;width:540px;height:190px;border:1px solid rgba(255,45,31,.22);
+  border-radius:50%;transform:rotate(-24deg)
+}
+.photo-card{
+  width:min(370px,78%);height:480px;position:relative;z-index:2;overflow:hidden;
+  border:1px solid rgba(245,233,0,.5);background:var(--plum);
+  box-shadow:18px 18px 0 var(--red),0 40px 100px #0009
+}
+.photo-card img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:saturate(.85) contrast(1.04)}
+.photo-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(5,11,24,.82))}
+.photo-meta{position:absolute;left:18px;right:18px;bottom:17px;z-index:3;display:flex;justify-content:space-between;align-items:end}
+.photo-meta span{font:9px 'DM Mono';letter-spacing:.12em;color:#fff}
+.photo-meta b{font:9px 'DM Mono';color:var(--yellow);font-weight:400}
+.float-tag{position:absolute;z-index:4;border:1px solid var(--line);background:#071020e8;padding:10px 12px;font:9px 'DM Mono';letter-spacing:.11em;color:#dfe2e7}
+.tag-a{top:45px;right:0;color:var(--yellow);border-color:#f5e90055}
+.tag-b{bottom:55px;left:-8px;color:#ff766e;border-color:#ff2d1f55}
+
+.grid-lines{
+  position:absolute;inset:0;pointer-events:none;opacity:.25;
+  background-image:linear-gradient(rgba(245,233,0,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(245,233,0,.09) 1px,transparent 1px);
+  background-size:42px 42px;
+  mask-image:linear-gradient(to bottom,transparent,black 20%,black 75%,transparent)
+}
+
+section{border-top:1px solid var(--line);padding:110px 0}
+.two{display:grid;grid-template-columns:200px 1fr;gap:70px}
+.label{font:10px 'DM Mono';letter-spacing:.15em;text-transform:uppercase;color:#707a89}
+h2{font-size:clamp(42px,5.4vw,70px);line-height:.95;letter-spacing:-.055em;margin:14px 0 27px}
+.lead{font-size:17px;line-height:1.8;color:var(--muted);max-width:900px}
+.facts{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-top:46px}
+.fact{padding:23px;background:#080f1d;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fact:nth-child(even){border-right:0}
+.fact:nth-last-child(-n+2){border-bottom:0}
+.fact span{display:block;font:9px 'DM Mono';letter-spacing:.14em;color:#6f7a89;margin-bottom:9px}
+.fact strong{display:block;font-size:14px}.fact small{display:block;color:#76808e;font-size:11px;margin-top:7px}
+
+.project{border-top:1px solid var(--line);display:grid;grid-template-columns:55px 1fr 390px;gap:22px;align-items:center;padding:58px 0;min-height:500px}
+.project:last-child{border-bottom:1px solid var(--line)}
+.num{font:10px 'DM Mono';color:#687382}
+.meta{display:flex;gap:18px;font:9px 'DM Mono';letter-spacing:.14em;color:#747f8d}
+h3{font-size:clamp(46px,5.5vw,76px);line-height:.9;letter-spacing:-.06em;margin:22px 0}
+.copy{max-width:650px;color:#929aa7;line-height:1.75;font-size:14px}
+.problem{max-width:650px;border-left:2px solid var(--red);padding-left:16px;margin-top:27px;color:#7d8794;font-size:12px;line-height:1.65}
+.problem b{display:block;color:var(--red);font:9px 'DM Mono';letter-spacing:.13em;margin-bottom:6px}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:22px}.tags span{border:1px solid var(--line);padding:7px 9px;color:#a1a9b4;font:9px 'DM Mono'}
+.visual{height:340px;border:1px solid #2d2440;background:linear-gradient(145deg,#140d1d,#071122);position:relative;overflow:hidden}
+.visual:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(245,233,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(245,233,0,.05) 1px,transparent 1px);background-size:34px 34px}
+.crack{position:absolute;left:52%;top:45px;width:3px;height:245px;background:var(--yellow);transform:rotate(21deg);box-shadow:0 0 18px #f5e90099}
+.crack i,.crack b{position:absolute;display:block;width:70px;height:2px;background:var(--red);content:""}
+.crack i{top:67px;left:-54px;transform:rotate(-35deg)}.crack b{top:145px;left:0;transform:rotate(35deg)}
+.vlabel{position:absolute;right:15px;bottom:15px;text-align:right;font:9px 'DM Mono';letter-spacing:.12em;line-height:1.65;color:#b2a3ba}
+.flood{background:linear-gradient(145deg,#0b1830,#21102c)}
+.flood:after{content:"";position:absolute;left:-20%;bottom:-30%;width:145%;height:68%;background:linear-gradient(155deg,transparent 0 18%,#173c6d 19% 32%,#0d2b51 33% 47%,#35103e 48% 63%,#5b172f 64%);transform:rotate(-4deg);opacity:.95}
+.risk{position:absolute;z-index:2;width:94px;height:94px;border:1px solid var(--yellow);border-radius:50%;left:48%;top:37%;box-shadow:0 0 45px #f5e90022}
+.risk:before{content:"+";position:absolute;inset:0;display:grid;place-items:center;color:var(--yellow);font:26px 'DM Mono'}
+.risk:after{content:"HIGH RISK";position:absolute;left:50%;top:105%;transform:translateX(-50%);white-space:nowrap;font:8px 'DM Mono';color:#ff7269}
+
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:90px}
+.list{border-top:1px solid var(--line)}
+.skill{display:grid;grid-template-columns:34px 1fr auto;align-items:center;border-bottom:1px solid var(--line);padding:19px 0}
+.skill i{font:9px 'DM Mono';color:#5f6b7a;font-style:normal}
+.skill strong{font-size:14px}.skill small{font:8px 'DM Mono';letter-spacing:.1em;color:#667281}
+
+.quote{text-align:center;padding:150px 0}
+.quote-mark{font:82px 'Playfair Display';line-height:.45;color:var(--red)}
+blockquote{font-size:clamp(38px,6vw,76px);line-height:.98;letter-spacing:-.05em;margin:30px 0}
+.by{font:9px 'DM Mono';letter-spacing:.14em;color:#697482}
+
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:90px}
+.links{display:flex;flex-direction:column;justify-content:end}
+.links a,.links span{padding:16px 0;border-bottom:1px solid var(--line);font:11px 'DM Mono';color:#9da6b2;text-decoration:none}
+.links a:hover{color:var(--yellow)}
+
+footer{border-top:1px solid var(--line);padding:23px 0;display:flex;justify-content:space-between;color:#596574;font:9px 'DM Mono';letter-spacing:.12em}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}.show{opacity:1;transform:none}
+
+@media(max-width:880px){
+  .nav{display:none}.hero,.two,.skills,.contact{grid-template-columns:1fr}
+  .hero{padding-top:55px}.hero-art{height:510px}.two{gap:30px}
+  .project{grid-template-columns:35px 1fr}.visual{grid-column:2;margin-top:22px}
+  .facts{grid-template-columns:1fr}.fact,.fact:nth-child(even){border-right:0}.fact:nth-last-child(-n+2){border-bottom:1px solid var(--line)}.fact:last-child{border-bottom:0}
+  section{padding:82px 0}.skills{gap:55px}footer{flex-direction:column;gap:12px}
+}
+@media(max-width:520px){
+  .top{padding:0 5vw}.top-link{display:none}h1{font-size:54px}.hero-art{height:430px}
+  .photo-card{height:390px;width:78%}.hero-art:before{width:320px;height:320px}
+  .project h3{font-size:48px}.visual{height:270px}
+}
+
+/* V4 enhancements */
+.section-intro{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:30px 0;color:#7f8997;line-height:1.8;font-size:13px}
+.motion-strip{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#070d1a;margin:0 0 90px}.motion-track{display:flex;width:max-content;animation:marquee 22s linear infinite}.motion-track span{font:10px 'DM Mono';letter-spacing:.16em;color:#737e8d;padding:18px 28px;white-space:nowrap}.motion-track b{color:var(--yellow);font-weight:400}
+.hero-art .orbit,.hero-art .orbit2{position:absolute;border:1px solid rgba(142,220,255,.2);border-radius:50%;z-index:1}.hero-art .orbit{width:470px;height:160px;transform:rotate(-23deg);animation:spin1 10s linear infinite}.hero-art .orbit2{width:340px;height:110px;transform:rotate(38deg);border-color:#ff2d1f55;animation:spin2 8s linear infinite}.orbit-dot{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 18px var(--red);z-index:2;animation:float 3s ease-in-out infinite}.project .visual{transition:.45s}.project:hover .visual{transform:translateY(-7px) scale(1.015);border-color:#f5e90066;box-shadow:0 25px 70px #0008}.scan{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--yellow),transparent);z-index:5;animation:scan 4s ease-in-out infinite}.node{position:absolute;width:9px;height:9px;border:1px solid var(--yellow);border-radius:50%;z-index:4;animation:pulse 2s ease-in-out infinite}.n1{left:18%;top:27%}.n2{right:22%;top:45%;animation-delay:.5s}.n3{left:38%;bottom:19%;animation-delay:1s}
+.editing{display:grid;grid-template-columns:1fr 1.1fr;gap:75px;align-items:start}.edit-copy p{color:#8993a1;line-height:1.8;font-size:14px}.edit-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}.edit-badges span{border:1px solid var(--line);padding:8px 10px;font:9px 'DM Mono';color:#a6afba}.channel-card{margin-top:16px;border:1px solid var(--line);padding:15px;background:#080f1d;display:flex;align-items:center;justify-content:space-between;gap:12px}.channel-info{display:flex;gap:11px;align-items:center}.vmark{width:38px;height:38px;border:1px solid #ff2d1f66;color:var(--red);display:grid;place-items:center;font-weight:800}.channel-info small{display:block;color:#6e7988;font:8px 'DM Mono';letter-spacing:.1em;margin-top:4px}.social-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.social-row a{font:9px 'DM Mono';text-decoration:none;border:1px solid var(--line);padding:10px 12px;color:#aeb6c0}.social-row a:hover{color:var(--yellow);border-color:#f5e90066}.reel-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.reel-card{min-height:200px;border:1px dashed #384052;background:linear-gradient(145deg,#1d0d29,#071326);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:18px;text-decoration:none}.reel-card:before{content:'';position:absolute;inset:-50%;background:conic-gradient(from 180deg,transparent,#ff2d1f33,transparent 35%,#f5e90022,transparent 70%);animation:spin2 8s linear infinite}.reel-card:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,#050b18ed)}.reel-card .play{position:absolute;top:16px;right:16px;width:40px;height:40px;border:1px solid #f5e90066;border-radius:50%;display:grid;place-items:center;color:var(--yellow);z-index:3}.reel-copy{position:relative;z-index:3}.reel-copy strong{display:block;font-size:13px}.reel-copy small{display:block;color:#7e8997;font:8px 'DM Mono';letter-spacing:.1em;margin-top:6px}.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:45px}.testimonial{border:1px solid var(--line);padding:22px;background:#080f1d;min-height:150px}.testimonial .quote-mini{font:30px 'Playfair Display';color:var(--red)}.testimonial p{font-size:12px;line-height:1.65;color:#8993a0}.testimonial small{font:8px 'DM Mono';color:#657181;letter-spacing:.1em}
+@keyframes spin1{to{transform:rotate(337deg) rotate(-23deg)}}@keyframes spin2{to{transform:rotate(398deg) rotate(38deg)}}@keyframes float{50%{transform:translate(12px,-18px)}}@keyframes scan{0%,100%{top:10%}50%{top:88%}}@keyframes pulse{50%{transform:scale(1.8);opacity:1}}@keyframes marquee{to{transform:translateX(-50%)}}
+@media(max-width:880px){.section-intro,.editing{grid-template-columns:1fr}.reel-grid,.testimonials{grid-template-columns:1fr}.hero-art .orbit{width:360px}.hero-art .orbit2{width:270px}}
+</style>
+</head>
+<body><div class="cursor-orb" id="cursorOrb"></div>
+
+<header class="top">
+  <div class="wrap" style="width:90vw;display:flex;align-items:center;justify-content:space-between">
+    <a class="brand" href="#home"><span class="brand-mark">MF</span>FAYAZ<span class="brand-muted">.DEV</span></a>
+    <nav class="nav">
+      <a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a><a href="Mohamed_Fayaz_S_Resume-1.pdf" target="_blank" rel="noopener">Resume ↗</a>
+    </nav>
+    <a class="top-link" href="https://www.linkedin.com/in/mohamed-fayaz-6021013b9" target="_blank" style="margin-right:8px">LinkedIn ↗</a><a class="top-link" href="https://github.com/Fayazcivil-Dev" target="_blank" rel="noreferrer">GitHub ↗</a>
+  </div>
+</header>
+
+<main class="wrap">
+<section id="home" class="hero" style="border-top:0">
+  <div class="grid-lines"></div>
+  <div class="hero-copy reveal">
+    <div class="status kicker"><i></i> CIVIL ENGINEERING STUDENT / 2026—30</div>
+    <h1>Building ideas<br><em>into reality.</em></h1>
+    <p class="hero-desc">I'm <strong>Mohamed Fayaz.S</strong>, a B.E. Civil Engineering student exploring the intersection of engineering, technology, design and intelligent problem solving.</p>
+    <div class="actions">
+      <a class="btn btn-main" href="#projects">Explore projects ↓</a>
+      <a class="btn btn-alt" href="Mohamed_Fayaz_S_Resume-1.pdf" target="_blank" rel="noopener">View Resume ↗</a>
+      <a class="btn btn-alt" href="mailto:mohamedfayaz2305@gmail.com">Let\'s connect ↗</a>
+    </div>
+  </div>
+
+  <div class="hero-art reveal"><div class="orbit"></div><div class="orbit2"></div><div class="orbit-dot"></div>
+    <div class="float-tag tag-a">SYSTEM / ONLINE</div>
+    <div class="float-tag tag-b">MADURAI / TN</div>
+    <div class="photo-card">
+      <img src="fayaz-profile.jpeg" alt="Mohamed Fayaz.S">
+      <div class="photo-meta"><span>MOHAMED FAYAZ.S</span><b>MF—01</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="two">
+    <div class="label reveal">01 / PROFILE</div>
+    <div class="reveal">
+      <div class="label">A STUDENT WITH A BUILDER'S MINDSET</div>
+      <h2>Engineering with curiosity,<br><em>precision & purpose.</em></h2>
+      <p class="lead">My focus is learning how structures, digital tools and sustainable ideas can work together to solve real-world problems. I'm building my foundation in Civil Engineering while developing practical skills in CAD, Python and web development.</p>
+      <div class="facts">
+        <div class="fact"><span>DEGREE</span><strong>B.E. Civil Engineering</strong><small>Velammal College of Engineering & Technology, Madurai</small></div>
+        <div class="fact"><span>PERIOD</span><strong>2026 — 2030</strong><small>Currently first year</small></div>
+        <div class="fact"><span>LOCATION</span><strong>Madurai, Tamil Nadu</strong><small>India</small></div>
+        <div class="fact"><span>COURSE</span><strong>CAD · AutoCAD</strong><small>Engineering design fundamentals</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="motion-strip"><div class="motion-track"><span><b>FAYAZ.DEV</b> / CIVIL ENGINEERING</span><span>BUILD • MAP • DESIGN • CREATE</span><span><b>FAYAZ.DEV</b> / CIVIL ENGINEERING</span><span>BUILD • MAP • DESIGN • CREATE</span><span><b>FAYAZ.DEV</b> / CIVIL ENGINEERING</span><span>BUILD • MAP • DESIGN • CREATE</span></div></div>
+<section id="projects">
+  <div class="label reveal">02 / SELECTED WORK</div>
+  <div class="section-intro reveal"><p>Two early concepts exploring smarter materials and spatial data for real-world civil engineering problems.</p><p>Each project is a starting point — researched, visualized and designed to grow into practical engineering work.</p></div>
+
+  <article class="project reveal">
+    <div class="num">01</div>
+    <div>
+      <div class="meta"><span>RESEARCH CONCEPT</span><span>CIVIL / MATERIALS</span></div>
+      <h3>Self-Heal<br><em>Buildings</em></h3>
+      <p class="copy">Self-healing concrete is designed to repair or seal suitable cracks automatically after they form, reducing manual intervention and helping improve the durability and service life of concrete structures.</p>
+      <div class="problem"><b>PROBLEM ADDRESSED</b>Conventional reinforced-concrete structures are vulnerable to cracking, water and chemical ingress, reinforcement corrosion, frequent maintenance and reduced service life.</div>
+      <div class="tags"><span>Concrete</span><span>Durability</span><span>Self-Healing</span></div>
+    </div>
+    <div class="visual"><div class="scan"></div><div class="node n1"></div><div class="node n2"></div><div class="node n3"></div>
+      <div class="crack"><i></i><b></b></div>
+      <div class="vlabel">AUTONOMOUS<br>REPAIR</div>
+    </div>
+  </article>
+
+  <article class="project reveal">
+    <div class="num">02</div>
+    <div>
+      <div class="meta"><span>CONCEPT PROJECT</span><span>CIVIL / GIS</span></div>
+      <h3>GIS-Based<br><em>Flood Risk Mapping</em></h3>
+      <p class="copy">A digital mapping concept that combines geographical factors to identify, assess and monitor areas that are more likely to experience flooding.</p>
+      <div class="problem"><b>PROBLEM ADDRESSED</b>Develop an intelligent GIS-based system to support better drainage planning, infrastructure management and disaster preparedness.</div>
+      <div class="tags"><span>GIS</span><span>Mapping</span><span>Risk Analysis</span></div>
+    </div>
+    <div class="visual flood"><div class="scan"></div><div class="node n1"></div><div class="node n2"></div><div class="node n3"></div>
+      <div class="risk"></div>
+      <div class="vlabel">FLOOD<br>RISK MAP</div>
+    </div>
+  </article>
+</section>
+
+<section id="skills">
+  <div class="skills">
+    <div class="reveal">
+      <div class="label">03 / TOOLKIT</div>
+      <h2>Learning the tools<br>behind the <em>ideas.</em></h2>
+    </div>
+    <div class="list reveal">
+      <div class="skill"><i>01</i><strong>Python</strong><small>CODING LANGUAGE</small></div>
+      <div class="skill"><i>02</i><strong>GitHub</strong><small>PROJECTS / VERSION CONTROL</small></div>
+      <div class="skill"><i>03</i><strong>AutoCAD</strong><small>CAD / DESIGN</small></div>
+      <div class="skill"><i>04</i><strong>Web Development</strong><small>HTML / CSS / JS BASICS</small></div>
+      <div class="skill"><i>05</i><strong>Problem Solving</strong><small>CORE CONCEPT</small></div>
+      <div class="skill"><i>06</i><strong>Team Tactical Solving</strong><small>COLLABORATION</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="editing"><div class="editing"><div class="edit-copy reveal"><div class="label">04 / CREATIVE LAB</div><h2>Engineering by day.<br><em>Editing after hours.</em></h2><p>Alongside Civil Engineering, I work on video editing, VFX and visual design. My creative work is presented through <strong>Venom EFX</strong> — a VFX artist and design-editing identity.</p><div class="edit-badges"><span>VIDEO EDITING</span><span>VFX</span><span>MOTION DESIGN</span><span>VISUAL DESIGN</span></div><div class="channel-card"><div class="channel-info"><div class="vmark">V</div><div><strong>VENOM EFX</strong><small>VFX ARTIST · DESIGN EDITOR · EDITING TEAM</small></div></div><a class="btn btn-alt" href="https://www.youtube.com/@venomefx-og" target="_blank">YouTube ↗</a></div><div class="social-row"><a href="https://www.linkedin.com/in/mohamed-fayaz-6021013b9" target="_blank">LINKEDIN ↗</a><a href="https://www.youtube.com/@venomefx-og" target="_blank">VENOM EFX ↗</a></div></div><div class="reveal"><div class="reel-grid"><a class="reel-card" href="https://www.youtube.com/@venomefx-og" target="_blank"><span class="play">▶</span><div class="reel-copy"><strong>EDIT REEL 01</strong><small>VIDEO PREVIEW — ADD VIDEO LATER</small></div></a><a class="reel-card" href="https://www.youtube.com/@venomefx-og" target="_blank"><span class="play">▶</span><div class="reel-copy"><strong>VFX SHOWCASE</strong><small>VIDEO PREVIEW — ADD VIDEO LATER</small></div></a><a class="reel-card" href="https://www.youtube.com/@venomefx-og" target="_blank"><span class="play">▶</span><div class="reel-copy"><strong>MOTION DESIGN</strong><small>VIDEO PREVIEW — ADD VIDEO LATER</small></div></a><a class="reel-card" href="https://www.youtube.com/@venomefx-og" target="_blank"><span class="play">▶</span><div class="reel-copy"><strong>DESIGN EDIT</strong><small>VIDEO PREVIEW — ADD VIDEO LATER</small></div></a></div></div></div></section>
+<section class="quote reveal">
+  <div class="quote-mark">“</div>
+  <blockquote>Great structures start with<br><em>great questions.</em></blockquote>
+  <div class="by">MOHAMED FAYAZ.S / CIVIL ENGINEERING STUDENT</div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <div class="reveal">
+      <div class="label">05 / CONTACT</div>
+      <h2>Let's build<br><em>something meaningful.</em></h2>
+    </div>
+    <div class="links reveal">
+      <a href="mailto:mohamedfayaz2305@gmail.com">mohamedfayaz2305@gmail.com ↗</a>
+      <a href="tel:+919940676854">+91 99406 76854</a>
+      <span>Madurai, Tamil Nadu, India</span>
+      <a href="https://www.linkedin.com/in/mohamed-fayaz-6021013b9" target="_blank" rel="noreferrer">linkedin.com/in/mohamed-fayaz ↗</a><a href="https://github.com/Fayazcivil-Dev" target="_blank" rel="noreferrer">github.com/Fayazcivil-Dev ↗</a>
+      <a href="Mohamed_Fayaz_S_Resume-1.pdf" target="_blank" rel="noopener">VIEW MY RESUME ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 MOHAMED FAYAZ.S</span>
+  <span>BUILT WITH CURIOSITY + CODE</span>
+</footer>
+</main>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+window.addEventListener('pointermove',e=>{const o=document.getElementById('cursorOrb');o.style.left=e.clientX+'px';o.style.top=e.clientY+'px'});
+</script>
+</body>
+</html>
